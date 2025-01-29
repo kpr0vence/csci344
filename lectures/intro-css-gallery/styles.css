@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Goldman);
+
+body {
+    font-family: Goldman, Arial, Helvetica, sans-serif;
+    font-size: 140%;
+}
+/* Your code here */
+/* WHY IS THERE A MARGIN??? */
+header {
+    background-color: #D496A7;
+    padding: 40px;
+}
+
+main {
+    background-color: #F1DEDE;
+    padding: 10px;
+    text-align: center; /*-- I guess text isn't just for text-- */
+    /* margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px; */
+}
+
+section {
+    background-color: #f3ebeb ;
+    display: inline-block;
+    margin: 20px;
+    box-shadow: 0px 0px 13px .2px #7e778f;
+    text-align: center;
+}
+/* It's not wrapping, and the padding is being applied to the who section :( bad */
+ section p {
+    padding: 15px;
+    flex-wrap:wrap;
+ }
+
+section:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px .5px #d77f96;
+    /* opacity: .50; */
+}
+
+.emphasize-section {
+    background-color:#BCF4DE;
+    box-shadow: 0px 0px 15px .2px  #7e778f;
+
+}
