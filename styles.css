@@ -1,6 +1,8 @@
 body {
     background-color: #f9f9f9;
     margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 
 header {
@@ -8,6 +10,7 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
+    font-weight: 600;
 }
 
 /* Sets up a 2 column grid to hold the tutorials | lectures */
@@ -56,10 +59,16 @@ div h2 {
 
 .card a {
     background-color: #9DC3C2;
+    color: #37506D;
     width: 100%;
     text-align: center;
     padding: 10px;
     border-radius: 10px 10px 0px 0px;
+}
+
+.card p {
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
 .card:hover {
@@ -73,4 +82,8 @@ div h2 {
 .card a:hover {
     background-color: #558B89;
     color:white;
+}
+
+main div:hover {
+    box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
 }
