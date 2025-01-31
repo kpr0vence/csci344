@@ -1,3 +1,76 @@
 body {
-    background-color: rgb(255, 101, 173);
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    background-color: #4D7298;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Sets up a 2 column grid to hold the tutorials | lectures */
+main {
+    /* background-color: cadetblue; */
+    display: grid;
+    grid-template: 100% / 1fr 1fr;
+    gap: 30px;
+    margin: 30px;
+}
+
+/* Div's inside Main's grid are flexboxes, that order their contents vertically (columns) */
+main > div {
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    height: fit-content;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border-color: #77A6B6;
+    border-style:none dashed dashed dashed;
+    /* border-style: none solid solid; */
+}
+
+div h2 {
+    background-color: #77A6B6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0%;
+    border-radius: 10px;
+}
+
+/* Sets up a flexbox class for the link and description to go into */
+.card {
+    background-color: #fdfcf3;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
+}
+
+.card a {
+    background-color: #9DC3C2;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card:hover {
+    /* box-shadow: -5px -5px 0px 0px rgba(69, 52, 52, 0.205); */
+    box-shadow: 0px 0px 0px 0px;
+    /* border:  rgba(69, 52, 52, 0.205);
+    border-style: solid none none solid;
+    border-width: 5px; */
+}
+
+.card a:hover {
+    background-color: #558B89;
+    color:white;
 }
