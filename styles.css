@@ -124,8 +124,12 @@ main div:hover {
     main {
         /* background-color: cadetblue; */
         display: grid;
-        grid-template: 100% / 1fr;
+        grid-template:  100% / 1fr;
         gap: 30px;
         margin: 30px;
+    }
+
+    .long {
+        grid-area: auto;
     }
  }
