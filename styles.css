@@ -17,9 +17,13 @@ header {
 main {
     /* background-color: cadetblue; */
     display: grid;
-    grid-template: 100% / 1fr 1fr;
+    grid-template: auto 1fr / 1fr 1fr;
     gap: 30px;
     margin: 30px;
+}
+
+.long {
+    grid-area: 1/2/3/3;
 }
 
 /* Div's inside Main's grid are flexboxes, that order their contents vertically (columns) */
