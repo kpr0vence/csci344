@@ -58,7 +58,7 @@ div h2 {
     box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
 }
 
-.card a {
+.card > a {
     background-color: #9DC3C2;
     color: #37506D;
     width: 100%;
@@ -80,7 +80,7 @@ div h2 {
     border-width: 5px; */
 }
 
-.card a:hover {
+.card > a:hover {
     background-color: #558B89;
     color:white;
 }
@@ -88,3 +88,40 @@ div h2 {
 main div:hover {
     box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
 }
+
+.reverse_case_text {
+    background-color: #9DC3C2;
+    color: #37506D;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+    /* Theres some weired spacing going on on the right side */
+}
+ li {
+    margin-left: -17%;
+    margin-bottom: 10px;    
+ }
+
+ li > a {
+    color: #2e435b;
+    padding: 5px;
+    margin: 5px;
+ }
+
+ li > a:hover {
+    background-color: #558B89;
+    color: white;
+ }
+
+ /* Smaller Windows */
+ @media screen and (max-width: 700px) {
+    main {
+        /* background-color: cadetblue; */
+        display: grid;
+        grid-template: 100% / 1fr;
+        gap: 30px;
+        margin: 30px;
+    }
+ }
