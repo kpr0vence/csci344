@@ -1,0 +1,23 @@
+/* Make sure that your @import statement is at the top of your CSS file  */
+
+
+@import url(https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap);
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: Delius Swash Caps, Arial, Helvetica, sans-serif;
+}

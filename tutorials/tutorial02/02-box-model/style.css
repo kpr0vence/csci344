@@ -1,0 +1,42 @@
+body * {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+/*
+Part 2: Put the main element (the card's parent container)
+into flex mode (display: flex) and adjust the 
+justify-content and align-items properties to center the card.
+*/
+main {
+    min-height: 100vh;
+}
+
+/*
+Part 1: Create some style blocks to style the card. 
+    Experiment with: border, padding, margin, height, and width.
+*/
+
+.card {
+    /* background-color: red; */
+    box-sizing: border-box;
+    border: solid 1px gray;
+   
+    margin: 10px;
+    width: 50vh;
+    
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2, .card p, .card button {
+    margin: 10px
+}

@@ -1,0 +1,56 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+
+nav > * {
+    border: solid 2px black;
+
+    padding: 5px;
+    margin: 5px;
+}
+
+nav {
+    border: solid 2px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Make sticky */
+    position: sticky;
+    left: 0;
+    right: 0;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;    
+}
+
+ul {
+    border: solid 2px black;
+    display: flex;
+    list-style-type: none;
+    gap: 10px
+}
+
+
+li {
+    border: solid 2px black;
+    padding: 10px;
+}
+
+li > a {
+    border: solid 2px black;
+    padding: 5px;
+}

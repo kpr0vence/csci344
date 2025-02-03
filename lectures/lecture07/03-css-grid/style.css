@@ -33,28 +33,43 @@ body {
 /* Task 3 */
 
 .container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  /* grid-template-rows: 1fr 1fr 10fr 1fr;  */ /*Not common convention*/
+  gap: 15px;
+  margin-top: 15px;
 }
 
 header {
+  /* grid-area: 1/1/2/4; */
+  grid-column: 1 / span 3;
 }
 
 nav {
+  
 }
 
 aside {
+  /* You could also do this with -row and use start / span */
+  grid-area: 2/3/4/4;
 }
 
 section {
+  /* grid-area: 2/1/4/2; */
+  grid-row: 2 / span 2;
 }
 
 main {
+  min-height: 60vh;
 }
 
 footer {
+  /* You could also do this with -column and use start / span */
+  grid-area: 4/1/5/4;
 }
 
 
-
+/* TO DO */
 @media (max-width: 1020px) {
 }
 
