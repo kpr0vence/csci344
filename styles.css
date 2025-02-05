@@ -89,7 +89,7 @@ div h2 {
     color:white;
 }
 
-main div:hover {
+main > div:hover {
     box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
 }
 
@@ -103,8 +103,22 @@ main div:hover {
     margin: 0px;
     /* Theres some weired spacing going on on the right side */
 }
+
+.card > div {
+    width: 90%;
+    align-content: center;
+}
+
+ ul {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style:disc;
+    column-gap: 20px;
+ }
+
  li {
-    margin-left: -17%;
+    margin-left: 0px;
     margin-bottom: 10px;    
  }
 
