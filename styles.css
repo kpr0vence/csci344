@@ -110,11 +110,11 @@ main > div:hover {
 }
 
  ul {
-    width: 95%;
+    width: 80%;
     padding: 0px;
     columns: 2;
     list-style-position: inside;
-    list-style:disc;
+    list-style:decimal;
     padding-left: 15px;
  }
 
