@@ -15,19 +15,19 @@ header {
 
 /* Sets up a 2 column grid to hold the tutorials | lectures */
 main {
-    /* background-color: cadetblue; */
     display: grid;
-    grid-template: auto 1fr / 1fr 1fr;
+    grid-template: auto 1fr 1fr/ 1fr 1fr;
+    border-color: #2e435b;
     gap: 30px;
     margin: 30px;
 }
 
-.long {
+#long {
     grid-area: 1/2/3/3;
 }
 
 /* Div's inside Main's grid are flexboxes, that order their contents vertically (columns) */
-main > div {
+.topics {
     background-color: white;
     display: flex;
     flex-flow: column-reverse;
@@ -37,6 +37,15 @@ main > div {
     border-color: #77A6B6;
     border-style:none dashed dashed dashed;
     /* border-style: none solid solid; */
+}
+
+.quotes {       /* WIP */
+    grid-column: span 2;
+    height: auto;
+    background-color: orange;
+    
+    /* height: fit-content; */
+    
 }
 
 div h2 {
@@ -89,7 +98,7 @@ div h2 {
     color:white;
 }
 
-main > div:hover {
+.topics:hover {
     box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
 }
 
