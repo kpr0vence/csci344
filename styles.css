@@ -110,22 +110,25 @@ main > div:hover {
 }
 
  ul {
+    width: 95%;
     padding: 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    columns: 2;
+    list-style-position: inside;
     list-style:disc;
-    column-gap: 20px;
+    padding-left: 15px;
  }
 
  li {
     margin-left: 0px;
     margin-bottom: 10px;    
+    
  }
 
  li > a {
     color: #2e435b;
-    padding: 5px;
+    padding: 3px;
     margin: 5px;
+    line-height: 25px;
  }
 
  li > a:hover {
