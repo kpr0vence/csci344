@@ -30,12 +30,15 @@ body {
 
 #bio {
     background-color: darkblue;
+    color: white;;
 }
 
 #portfolio {
     background-color: rgb(37, 59, 199);
+    color: white;
 }
 
 #contact {
     background-color: darkcyan;
+    color: white;
 }

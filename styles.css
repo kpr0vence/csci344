@@ -43,6 +43,9 @@ main {
     grid-column: span 2;
     height: auto;
     background-color: orange;
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
     
     /* height: fit-content; */
     
@@ -144,6 +147,13 @@ div h2 {
     background-color: #558B89;
     color: white;
  }
+
+.sticky-note {
+    background-color: yellow;
+    -webkit-box-shadow: 0 4px 4px -2px #000000;
+    -moz-box-shadow: 0 4px 4px -2px #000000;
+    box-shadow: 0 4px 4px -2px #00000088;
+}
 
  /* Smaller Windows */
  @media screen and (max-width: 1000px) {
