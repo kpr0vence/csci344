@@ -25,10 +25,12 @@ nav {
     justify-content: space-between;
     align-items: center;
 
+    margin: 10px;
+
     /* Make sticky */
     position: sticky;
     left: 0;
-    right: 0;
+    top: 0;
 }
 
 nav a {
