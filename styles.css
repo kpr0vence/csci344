@@ -16,7 +16,7 @@ header {
 /* Sets up a 2 column grid to hold the tutorials | lectures */
 main {
     display: grid;
-    grid-template: auto 1fr 1fr/ 1fr 1fr;
+    grid-template: auto auto auto/ 1fr 1fr;
     border-color: #2e435b;
     gap: 30px;
     margin: 30px;
@@ -39,19 +39,7 @@ main {
     /* border-style: none solid solid; */
 }
 
-.quotes {       /* WIP */
-    grid-column: span 2;
-    height: auto;
-    background-color: orange;
-    display: flex ;
-    flex-wrap: wrap;
-    gap: 40px;
-    
-    /* height: fit-content; */
-    
-}
-
-div h2 {
+.topics h2 {
     background-color: #77A6B6;
     color: white;
     text-align: center;
@@ -148,11 +136,58 @@ div h2 {
     color: white;
  }
 
+ .board {
+    grid-area: 3/1/4/3;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    border: 20px double #dcbf84;
+    background: #c9ac7a;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+
+    
+ }
+
+ .board > h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+ }
+
+ .quotes {       /* WIP */
+    grid-column: span 2;
+    height: auto;
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: start;
+    
+    /* height: fit-content; */
+    
+}
+
 .sticky-note {
-    background-color: yellow;
-    -webkit-box-shadow: 0 4px 4px -2px #000000;
-    -moz-box-shadow: 0 4px 4px -2px #000000;
-    box-shadow: 0 4px 4px -2px #00000088;
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-wrap: wrap;
+
+    padding: 20px;
+    padding-top: 10px;
+    width: 20%;
+    height:max-content;
+
+    /* Box Shadows */
+    background-color: #f9df82;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.words-of-quote {
+    font-size: large;
 }
 
  /* Smaller Windows */
