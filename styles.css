@@ -16,7 +16,7 @@ header {
 /* Sets up a 2 column grid to hold the tutorials | lectures */
 main {
     display: grid;
-    grid-template: auto 1fr  1fr/ 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     border-color: #2e435b;
     gap: 30px;
     margin: 30px;
@@ -170,7 +170,7 @@ main {
 
 .sticky-note {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: space-between;
     flex-wrap: wrap;
 
@@ -194,6 +194,7 @@ main {
     ul {
         width: 80%;
         columns: 1;
+        padding-left: 0px;
     }
 
    
@@ -203,12 +204,26 @@ main {
     main {
         /* background-color: cadetblue; */
         display: grid;
-        grid-template:  100% / 1fr;
+        grid-template-columns: 100%;
         gap: 30px;
+
         margin: 30px;
     }
 
-    .long {
+    #long {
         grid-area: auto;
+    }
+
+    .quotes {
+        flex-wrap: none;
+        justify-content: center;
+    }
+
+    .board {
+        grid-area: auto;
+    }
+
+    .sticky-note {
+        width: 100%;
     }
  }
