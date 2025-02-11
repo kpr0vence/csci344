@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 
-.fa-paper-plane {
+/* .fa-paper-plane {
   color: #4077a3;  
-}
+} */
 
 body * {
     box-sizing: border-box;
@@ -140,6 +140,52 @@ main {
     margin-bottom: 50px;
 }
 
+/* Kati's Section (post's info/comment section) */
+.post-text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    padding-bottom: 0px;
+    border-bottom:solid 2px #9c9c9d71;
+}
+
+.icons-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.icons-bar > div {
+    display: flex;
+    gap: 10px;
+}
+
+.likes {
+    padding-top: 15px;
+    padding-bottom: 7px;
+}
+
+.post-text p {
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.post-text strong {
+    font-weight: 700;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comments-section > a {
+    padding-left: 0px;
+}
+
+.timestamp {
+    font-size: .8em;
+    color: #77797c;
+}
+
 /* Stories */
 
 .stories {
@@ -171,6 +217,11 @@ main {
   align-items: center;
   justify-content: center;
   padding: 10px;
+
+  /* I think that the following things need to be added */
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
 }
 
 @media (max-width: 800px) {
