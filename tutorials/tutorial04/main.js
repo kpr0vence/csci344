@@ -7,10 +7,12 @@ function setup() {
 
     // invoke any drawing functions inside of setup.
     // functions should all go between "createCanvas()" and "drawGrid()"
-    draw5Circles();
-    draw5RedSquares();
+    // draw5Circles();
+    // draw5RedSquares();
 
     //Kati's functions 
+    staryNight();   //If you want to see the rest, just comment this out
+
     draw5CirclesWhile();
     draw5CirclesFor();
     drawNCircles(20);
@@ -27,7 +29,6 @@ function setup() {
 
     drawGrid(canvasWidth, canvasHeight);
 
-    staryNight();   //If you want to see the rest, just comment this out
 }
 
 // my first function
