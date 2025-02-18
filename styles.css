@@ -2,6 +2,7 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 100px;
     
 }
 
@@ -189,6 +190,46 @@ main {
     font-size: large;
 }
 
+iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.background {
+    padding: 100px;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    background-image: url("computer.jpg"); /* The image used */
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 500px; 
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; 
+}
+
+.site {
+    width: 34em;
+    height: 25em;
+    background: transparent;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.web-browse {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+
  /* Smaller Windows */
  @media screen and (max-width: 1000px) {
     ul {
@@ -226,4 +267,30 @@ main {
     .sticky-note {
         width: 100%;
     }
+
+    .buttons-wrapper {
+        width: 80%;
+    }
+
+    .site {
+        height: 20em;
+        margin: 55px;
+        /* width: 15em; */
+    }
+    .background {
+        padding: 30px;
+    }
+
+    @media screen and (max-width: 550px) {
+        .site {
+            height: 17em;
+            margin-top: 80px;
+            width: 50em;
+        }
+
+        .background {
+            padding: 0px;
+        }
+    }
  }
+

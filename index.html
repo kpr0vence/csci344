@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
     <title>Kati's Homepage</title>
   </head>
 
@@ -16,30 +17,40 @@
       <div class="topics">
         <h2>Homeworks</h2>
         <div class="card">
-          <a href="https://docs.google.com/document/d/1-_9TBU8RBABBoMpzIAYKxfl8vt6lmge0w8E78Y9iDOI/edit?usp=sharing"><strong>Homework 01</strong>: Current CS Issues</a>
+          <a
+            href="https://docs.google.com/document/d/1-_9TBU8RBABBoMpzIAYKxfl8vt6lmge0w8E78Y9iDOI/edit?usp=sharing"
+            ><strong>Homework 01</strong>: Current CS Issues</a
+          >
           <p>
-            We were asked to research a current computer science-related issue and write our thoughts on it. I chose
-            AI art "witch hunting" and how it effects artists and peoples' preception of art.
+            We were asked to research a current computer science-related issue
+            and write our thoughts on it. I chose AI art "witch hunting" and how
+            it effects artists and peoples' preception of art.
           </p>
         </div>
         <div class="card">
-          <a href="homework/hw02/index.html"><strong>Homework 02</strong>: Photo App</a>
+          <a href="homework/hw02/index.html"
+            ><strong>Homework 02</strong>: Photo App</a
+          >
           <p>
-            This homework was made in collaboration with a classmate, Caleb Knapp. We
-            implementad a "photo app" according to the given specifications.
+            This homework was made in collaboration with a classmate, Caleb
+            Knapp. We implementad a "photo app" according to the given
+            specifications.
           </p>
         </div>
       </div>
+
+      <!-- https://azatyazh.github.io/csci344/#quizzes -->
 
       <!-- Extras Section -->
       <div class="topics">
         <h2>Exams</h2>
         <div class="card">
-          <a href="quizzes/quiz01/index.html"
-            ><strong>Quiz 1</strong></a>
+          <a href="quizzes/quiz01/index.html"><strong>Quiz 1</strong></a>
           <p>
-            Our first quiz included modifying the following homepage according to the provided specifications, as well as a written
-            portion, which asked the questions "Where is the internet?" "Who owns the internet?" and "Who made the internet?". 
+            Our first quiz included modifying the following homepage according
+            to the provided specifications, as well as a written portion, which
+            asked the questions "Where is the internet?" "Who owns the
+            internet?" and "Who made the internet?".
           </p>
         </div>
       </div>
@@ -200,12 +211,35 @@
 
           <div class="sticky-note">
             <p class="words-of-quote">
-              "This is our work of art. <em>We</em> are the modern Sharkalangelo."
+              "This is our work of art. <em>We</em> are the modern
+              Sharkalangelo."
             </p>
             <p><strong>- Kati Provence and Caleb Knapp</strong></p>
           </div>
         </div>
       </div>
+      <!-- End Quote Board Section -->
+      <!-- <div> -->
+      <!-- <h1>New Thing</h1> -->
+      <!-- <iframe src="https://VWoolard.github.io/csci344/" frameborder="0"></iframe>
+
+        <iframe src="https://m-mazzotta.github.io/csci344/" frameborder="0"></iframe> -->
+
+      <!-- </div> -->
     </main>
+
+    <div class = "web-browse">
+      <h1>Browse my Friends' Websites</h1>
+      <div class = "buttons-wrapper">
+        <button id="btn1" onclick="changeSite('https://VWoolard.github.io/csci344/')">Violet's</button>
+        <button id="btn1" onclick="changeSite('https://m-mazzotta.github.io/csci344/')">Mira's</button>
+        <button id="btn1" onclick="changeSite('https://kpr0vence.github.io/csci344/')">Alina's</button>
+      </div>
+      
+      
+    </div>
+    <div class="background">
+      <iframe class="site" src="https://m-mazzotta.github.io/csci344/" frameborder="0"></iframe>
+    </div>
   </body>
 </html>
