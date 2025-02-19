@@ -164,7 +164,7 @@ main {
     display: flex ;
     flex-wrap: wrap;
     gap: 40px;
-    justify-content: start;
+    justify-content: center;
     
     
 }
@@ -172,12 +172,11 @@ main {
 .sticky-note {
     display: flex;
     justify-content: end;
-    align-items: space-between;
     flex-wrap: wrap;
 
     padding: 20px;
     padding-top: 10px;
-    width: 20%;
+    width: 18%;
     height:max-content;
 
   
