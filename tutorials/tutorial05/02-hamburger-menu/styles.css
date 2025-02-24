@@ -81,7 +81,7 @@ body {
     /* Show menu when active */
     .nav-links.active {
         right: 0;
-        background-color: hotpink;
+        /* background-color: hotpink; */
     }
 
     .nav-links {
@@ -91,8 +91,8 @@ body {
         width: 300px;
         background: #333;
         text-align: center;
-        /* transition: right 0.3s ease-in-out; */
-        transition: all 3s ease-in-out;
+        transition: right 0.3s ease-in-out;
+        /* transition: all 3s ease-in-out; */
         flex-direction: column;
     }
 
