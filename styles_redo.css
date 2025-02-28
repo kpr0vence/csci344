@@ -5,6 +5,7 @@ body {
     margin: 0px;
     /* background-color: aqua; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 h1, h2, h3, h4 {
@@ -26,7 +27,7 @@ nav {
     left: 0;
     top: 0;
 
-    background-color: #F2F0EF;
+    background-color: #f9f9f9;
 }
 
 .navbar-leftside {
@@ -64,14 +65,19 @@ nav a {
 
 /* Intro / Suprise Me */
 #main-content {
+    /* Stylization */
+    background: rgb(44,36,83);
+    background: linear-gradient(133deg, rgba(44,36,83,1) 0%, rgba(101,42,87,1) 45%, rgba(187,62,99,1) 100%);
+
+    padding-bottom: 20px;
+
+}
+
+#intro-layout {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 85vh;
-
-    /* Stylization */
-    background: rgb(44,36,83);
-    background: linear-gradient(133deg, rgba(44,36,83,1) 0%, rgba(101,42,87,1) 45%, rgba(187,62,99,1) 100%);
 }
 .container { 
     width: 60vw;
@@ -83,7 +89,7 @@ nav a {
     border-radius: 5px;
     box-shadow: 0px 0px 10px #cb9f7d;
 
-    background-color: #F2F0EF;
+    background-color: #f9f9f9;
 }
 
 .introduction {
@@ -143,13 +149,14 @@ nav a {
 
 .icon-wrapper {
     background-color: #652a57;
-    color: white;
+    color: #f9f9f9;
     padding: 10px;
     border-radius: 50%;
     font-size: small;
 }
 
 .icon-wrapper:hover {
+    transition: all 0.4s ease;
     background-color: #a94865;
     box-shadow: 0px 0px 7px  #cb9f7d;
 }
@@ -163,7 +170,7 @@ nav a {
 }
 
 .filter-button {
-    color: #ffff;
+    color: #f9f9f9;
     background-color: #652a57;
     cursor: pointer;
     font-weight: bold;
@@ -173,10 +180,60 @@ nav a {
 }
 
 .filter-button:hover {
-    background-color: #F2F0EF;
+    background-color: #f9f9f9;
     color: #652a57;
     border: solid 2px #652a57;
     transition: all 0.4s ease;
+}
+
+/* Main Content Section */
+
+.flex-start-center {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+}
+
+.topic {
+    /* background-color: #ffff; */
+    width: 80vw;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    border: solid 2px black;
+
+}
+
+.topic-intro {
+    border-radius: 5px;
+
+    background-color: #F2F0EF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.topic-intro h1 {
+    margin-top: 50px;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.most-recent {
+    background-color: #F2F0EF;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Theme switcher buttons */
@@ -214,6 +271,46 @@ nav a {
 #theme-button:hover {
     color: #a94865;
 }
+
+/* Go back Button */
+.back-button-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #ffffffb1;
+
+    width: max-content;
+
+    /* Make fixed */
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /* font-size: large; */
+}
+
+.back-button {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #666;
+    margin: 0px;
+    padding: 10px;
+}
+
+/* <div class = "back--wrapper">
+    <button class = "back-button">Go Back</button>
+</div> */
+
 
 /**************/
 /* Dark Mode */
@@ -272,7 +369,7 @@ nav a {
 }
 
 .dark-mode .theme-wrapper {
-    background-color: rgba(178, 177, 177, 0.784);
+    background-color: rgba(125, 125, 125, 0.784);
 }
 
 .dark-mode #theme-button {

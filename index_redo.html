@@ -19,7 +19,7 @@
             <li><a href="#homework">Homework</a></li>
             <li><a href="#tutorials">Tutorials</a></li>
             <li><a href="#lectures">Lectures</a></li>
-            <li><a href="#exams">Exams</a></li>
+            <li><a href="#exams">Quizzes</a></li>
             <li><a href="#extras">Extras</a></li>   <!-- Add a dropdown to the extras section -->            
         </ul>
     </nav>  <!-- End Nav Bar -->
@@ -28,42 +28,55 @@
         <p>Theme:</p>
         <i id = "theme-button" class="fa-solid fa-sun"  onclick="changeClass('')"></i>
         <i id = "theme-button" class="fa-solid fa-moon" onclick="changeClass('dark-mode')"></i>
-        <!-- <button class = "theme-changer" onclick="changeClass('dark-mode')">DarkMode</button>
-        <button class = "theme-changer" onclick="changeClass('')">Default</button> -->
     </div>
 
-     <section id = "main-content">
-        <!-- Begin Intro / Suprise Me Section -->
-        <section class = "container">
-            <div class = "introduction">
-                <h1>Welcome to my Homepage</h1>
-                <p>This website is constanly being updates as I learn more about Website Development from my CSCI 344 class. It also presents all of the assignments I have done for that class.</p>
-            </div>
-            <div class = "suprise-me">
-                <h2>Suprise me</h2>
-                <div class = "suprise-wrapper"><p id = "suprise-me-prompt">Go to any random assignment</p>
-                    <div class = "icon-wrapper"><i class="fa-solid fa-arrow-right" ><a class = "suprise-link" href=""></a></i></div>
+    <section id = "main-content">
+        <section id = "intro-layout">
+            <!-- Begin Intro / Suprise Me Section -->
+            <section class = "container">
+                <div class = "introduction">
+                    <h1>Welcome to my Homepage</h1>
+                    <p>This website is constanly being updates as I learn more about Website Development from my CSCI 344 class. It also presents all of the assignments I have done for that class.</p>
                 </div>
-                <div class = filter-wrapper>
-                    <!-- Eventually these will trigger javascript which gets a subset of the possible links that is only these things and ALSO update the "go to any random assignment" to "go to any (ex.) Homework assignment" or something -->
-                    <button class = "filter-button" onclick="changeOptions('homework')">Only Homework</button>
-                    <button class = "filter-button" onclick="changeOptions('tutorial')">Only Tutorials</button>
-                    <button class = "filter-button" onclick="changeOptions('lecture')">Only Lecutures</button>
-                    <button class = "filter-button" onclick="changeOptions('quiz')">Only Exams</button>
-                    <!-- <button class = "filter-button">Only Extras</button> -->
+                <div class = "suprise-me">
+                    <h2>Suprise me</h2>
+                    <div class = "suprise-wrapper"><p id = "suprise-me-prompt">Go to any random assignment</p>
+                        <div class = "icon-wrapper"><i class="fa-solid fa-arrow-right" ><a class = "suprise-link" href=""></a></i></div>
+                    </div>
+                    <div class = filter-wrapper>
+                        <!-- Eventually these will trigger javascript which gets a subset of the possible links that is only these things and ALSO update the "go to any random assignment" to "go to any (ex.) Homework assignment" or something -->
+                        <button class = "filter-button" onclick="changeOptions('reset')">Reset</button>
+                        <button class = "filter-button" onclick="changeOptions('homework')">Only Homework</button>
+                        <button class = "filter-button" onclick="changeOptions('tutorial')">Only Tutorials</button>
+                        <button class = "filter-button" onclick="changeOptions('lecture')">Only Lecutures</button>
+                        <button class = "filter-button" onclick="changeOptions('quiz')">Only Quizzes</button>
+                        <!-- <button class = "filter-button">Only Extras</button> -->
+                    </div>
                 </div>
-            </div>
-            
-        </section>  <!-- End Intro / Suprise Me Section -->
+            </section>  <!-- End Intro / Suprise Me Section -->
+        </section>
 
+            <!-- Begin Topics Scetion -->
+            <section class = "flex-start-center">
+                <div class = "topic">
+                    <div class = "topic-intro">
+                        <h1>Tutorials</h1>
+                        <p>Gives some info about what the topics typically are</p>
+                    </div>
+                    <div class = "topic-content">
+                        <div class = "most-recent">
+                            <h3>Most Recent 04</h3>
+                            <p>Description about the assignment</p>
+                            <a href="">See assignment</a>
+                        </div>
+                        <button>See full list here</button>
+                    </div>
+                </div>
         
+            </section>  <!-- End Topics Scetion -->
     
-        <!-- Begin Topics Scetion -->
-        <section>
-    
-        </section>  <!-- End Topics Scetion -->
-
-     </section>
+    </section>
+     
     
 
     <!-- Everything after this should not have a gradient, but rather a white background -->

@@ -143,3 +143,38 @@ h1 {
 .high-contrast button {
     color: black;
 }
+
+
+.theme-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #ffffffb1;
+
+    width: max-content;
+
+    /* Make fixed */
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    /* font-size: large; */
+}
+
+.back-button {
+    background-color: transparent;
+    border: 0px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #666;
+    margin: 0px;
+    padding: 10px;
+}
