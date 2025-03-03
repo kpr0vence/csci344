@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1 id = "main-header">Display Text</h1>
+    <button id = "toggle-dark">Toggle Dark Mode</button>
+    <button id = "change-color">Change Background Color</button>
+    <button id = "toggle-menu" onClick = "toggleSideMenu()">Show/Hide Side Menu</button>
+    <p class = "highlight">Here is a list:</p>
+    <ul>
+        <li>Point 1</li>
+        <li class = "highlight">Point 2</li>
+        <li>Point 3</li>
+        <li class = "highlight">Point 4</li>
+    </ul>
+    <p id = "target">That's the end of the list!!</p>
+    <div>
+        <h2>To Do List</h2>
+        <p>Feel free to add or remove items. The input must match the item you wished to be removed</p>
+        <input type="text" id="item-input" tabindex="1" placeholder="Add or Remove Item..." />
+        <button aria-label="Add Item" tabindex="3" onclick="addItem(event)">Add</button>
+        <button aria-label="Remove Item" tabindex="3" onclick="removeItem(event)">Remove</button>
+        
+        <ul id = "todo-list">
+            <!-- Will be filled dynamically by the user -->
+        </ul>
+    </div>
+   
+    <button id = "read-more">Read More</button>
+    <p id = "to-hide" class = "hidden">ooooOOOooOOo~~~ Hidden text! It's like it's magic!</p>
+
+    <br>
+
+    <img src="/computer.jpg" alt="">
+    <img src="/lectures/intro-css-gallery/photo-assets/fishing.jpg" alt="">
+    <h2 id = "menu">Menu</h2>
+
+    <button id = "photo-button" onclick="insertPhoto('/lectures/intro-css-gallery/photo-assets/tunnelrat.png')">Multiply Him</button>
+    <img src="/lectures/intro-css-gallery/photo-assets/tunnelrat.png" alt="">
+
+
+    <div id = "side-menu">
+        <ul>
+            <li>Fake Nav Item 1</li>
+            <li>Fake Nav Item 2</li>
+            <li>Fake Nav Item 3</li>
+
+        </ul>
+    </div>
+
+    <div class = "bookshelf">
+
+    </div>
+
+</body>
+</html>
+

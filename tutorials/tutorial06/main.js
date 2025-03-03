@@ -27,15 +27,14 @@ const isClassFull = (course) => {
 const doesTermMatch = (course) => {
     // modify this to accurately apply the filter:
     let term = course.Title.toLowerCase();
+    let termCode = course.Code.toLowerCase();
     
-    return (term.includes(searchTerm.toLowerCase()));
+    return (term.includes(searchTerm.toLowerCase()) || termCode.includes(searchTerm.toLowerCase()));
 };
 
 // Part 1.2
 const dataToHTML = (course) => {
     let availabilitySnippet;
-    let days = course.Days;
-    let location = course.Location.FullLocation;
     //Get if course is open or closed
     if (isClassFull(course)) {
         availabilitySnippet = waitlistHTML(course);
@@ -43,30 +42,23 @@ const dataToHTML = (course) => {
         availabilitySnippet = openSpotsHTML(course);
     }
 
-    //Some classes have null for Days and FullLocation. Show TBD instead
-    if (days === null) {
-        days = "TBD";
-    } 
-    if (location === null) {
-        location = "TBD";
-    }
-
     return `<section class="course">
-             <h2>${course.Title}</h2>
+             <h2>${course.Code}: ${course.Title}</h2>
              <p>
                  ${availabilitySnippet}
              </p>
              <p>
-                 ${days} &bull;  ${location} &bull; ${course.Hours} credit hour(s)
+                 ${course.Days || "TBD"} &bull;  ${course.Location.FullLocation || "TBD"} &bull; ${course.Hours} credit hour(s)
              </p>
              <p><strong>${course.Instructors[0].Name}</strong></p>
-     </section>`;
+     </section>`;   //See how we could use the or operator to get it to display the TBD if the data field is null
 };
 
 const waitlistHTML = (course) => {
     //TBH, not sure how the waitlist number should be reported, but heres one way (I guess)
+    let numOnList = course.EnrollmentCurrent - course.EnrollmentMax;
     return `<i class="fa-solid fa-circle-xmark"></i> 
-            Closed &bull; ${course.CRN} &bull; Number on Waitlist ${course.WaitlistAvailable}`;
+            Closed &bull; ${course.CRN} &bull; Number on Waitlist: ${numOnList}`;
 };
 
 const openSpotsHTML = (course) => {

@@ -1,0 +1,49 @@
+.highlight {
+    background-color: darkorchid;
+}
+
+.text-content {
+    color: blueviolet;
+}
+
+.dark-mode {
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+}
+
+.hidden {
+    display: none;
+}
+
+#side-menu {
+    background-color: hotpink;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    margin: 0;
+    height: 100vh;
+
+}
+
+.bookshelf{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-card {
+    background-color: rgb(225, 146, 205);
+    color: white;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    width: min-content;
+    /* gap: 10px; */
+}
+
+
+
+img {
+    width: 200px;
+}
