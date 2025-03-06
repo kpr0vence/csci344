@@ -8,6 +8,10 @@ body {
 
 }
 
+body * {
+    transition: all 0.4s ease
+}
+
 h1, h2, h3, h4 {
     font-family: 'Comfortaa';
 }
@@ -190,28 +194,50 @@ nav a {
 
 .flex-start-center {
     display: flex;
-    justify-content: center;
-    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
 
+
+    /* border-top: solid 4px white; */
+
+}
+
+.topic-header {
+    width: 100vw;
+    /* background-color: #a94865; */
+    padding-left: 60px;
+    margin-top: 10px;
+    border: solid 4px #e1ac83;
+    box-shadow: 0px 0px 10px #cb9f7d;
+}
+
+.topic-header-text {
+    align-self: start;
+    color: white;
 }
 
 .topic {
     /* background-color: #ffff; */
     width: 80vw;
     padding: 30px;
+    padding-bottom: 50px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 
-    border: solid 2px black;
+    /* border: solid 2px #F2F0EF; */
 
 }
 
 .topic-intro {
     border-radius: 5px;
 
-    background-color: #F2F0EF;
+    background-color: #f2f0ef53;
+    border: solid 4px #F2F0EF;
+    color: #F2F0EF;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -235,6 +261,32 @@ nav a {
     padding: 10px;
     border-radius: 5px;
 }
+
+.full-list {
+    color: #f9f9f9;
+    background-color: rgba(225, 172, 131, 0);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px;
+
+    border-radius: 4px;
+    border-width: 4px;
+    /* border: none; */
+    /* box-shadow: 0px 0px 7px #e1ac83; */
+}
+
+.full-list:hover {
+    background-color: #f9f9f9;
+    color: #652a57;
+    border: solid 4px #f9f9f9;
+    transition: all 0.4s ease;
+}
+
+#lecture {  
+    /* Add onClick funciton that will show/hide contents */
+}
+
+
 
 /* Theme switcher buttons */
 .theme-wrapper {
@@ -378,4 +430,30 @@ nav a {
 
 .dark-mode #theme-button:hover {
     color: #a94865;
+}
+
+.dark-mode .most-recent, .dark-mode .topic-intro {
+    background-color: rgb(20, 20, 20);
+}
+
+.dark-mode .topic-intro {
+    border: none;
+}
+
+.dark-mode .topic-header-text {
+    color: whitesmoke;
+}
+
+.dark-mode .full-list {
+    border-color: #652a57;
+}
+
+.dark-mode .full-list:hover {
+    border-color: #a94865;
+    background-color: #a94865;
+    color: whitesmoke;
+}
+
+.dark-mode .topic a {
+    color: #7357b9;
 }

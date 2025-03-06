@@ -1,7 +1,7 @@
 // ignore this function for now. We'll go over it
 // on Wednesday: 
 async function fetchCourses() {
-    const url = `https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2023/spring/`;
+    const url = `https://meteor.unca.edu/registrar/class-schedules/api/v1/courses/2025/fall/`;
     courseList = await fetch(url).then(response => response.json());
     displayResults(courseList);
 } 
@@ -9,6 +9,18 @@ async function fetchCourses() {
 function displayResults(courses) {
     
     // your code here.
+    //Alt. solution (given in review session)
+    // console.log(courses);
+    // let container = document.querySelector("#results");
+    // for (const course of courses) {
+    //     // console.log(course.Title);
+    //     if (course.Department == "CSCI") {
+    //         console.log(course.Title+ " is a Comp Sci class, adding it to the page");
+    //         container.insertAdjacentHTML("beforeend", buildSnippet(course));
+    //     }
+    // }
+
+
     //given the list of courses, filter it so that it's only the ones with CSCI department
 
     //Each course is an object

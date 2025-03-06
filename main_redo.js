@@ -71,12 +71,6 @@ function changeOptionsReset() {
     console.log("The phrase is now \"" +phrase.innerHTML+ "\"");
 }
 
-function changeClass(type) {
-    let body = document.querySelector("body");
-    body.className = type;
-
-}
-
 function goToRandomAssignment() {
     let max = options.length - 1;
     let min = 0;
@@ -96,4 +90,11 @@ function addBackButton(link) {
 let supriseMe = document.querySelector(".icon-wrapper");
 
 supriseMe.addEventListener('click', goToRandomAssignment);
+
+
+function changeClass(type) {
+    let body = document.querySelector("body");
+    body.className = type;
+
+}
 
