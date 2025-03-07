@@ -88,3 +88,16 @@ function changeClass(type) {
 
 }
 
+function injectAllTutorials() {
+    let justTut = ALL_LINKS.filter( (name) => name.includes("tutorial"));
+    let targetLocation = document.querySelector("#full-list-tutorials")
+    justTut.forEach( (tut) => {
+        let snippet = `<div class = "card">
+                        <h4>Tutorial: <a href=${tut}> Link</a></h4>
+                        <p>Words about it</p>
+                    </div>`;
+        targetLocation.insertAdjacentHTML("beforeend", snippet);
+    });
+}
+
+// injectAllTutorials();
