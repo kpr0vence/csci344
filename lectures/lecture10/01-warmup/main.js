@@ -28,8 +28,8 @@ function mouseDragged() {
 }
 
 function shapeDrawer() {
-    // const [r,g,b] = getColor();
-    // fill(getColor());
+    // let [r,g,b] = getColor();
+    fill(getColor());
     if ( Math.random() > .5) {
         // circle(mouseX, mouseY, Math.random() * 100);
         drawBullseye();
@@ -42,18 +42,29 @@ function shapeDrawer() {
 
 function drawBullseye() {
     for(let i = 150; i >= 0 ; i-=25) {
+        fill(getColor());
         circle(mouseX, mouseY, i);
     }
 }
 
+//Generates a hex code
 function getColor() {
-    let r = Math.Random() * 255;
-    let g = Math.Random() * 255;
-    let b = Math.Random() * 255;
+    let builder = "#";
+    for(let i = 0; i < 6; i++) {
+        builder += getRandomCharacter();
+    }
 
-    return (r, g, b);
+    console.log("Generated the hex code " +builder);
+    return builder
 }
 
+function getRandomCharacter() {
+    const characters = 'abcdef0123456789';
+    let toReturn = Math.floor(Math.random()*characters.length);
+    toReturn = characters.charAt(toReturn);
+    console.log("returning the following character: " +toReturn);
+    return toReturn;
+}
 
 
 /**

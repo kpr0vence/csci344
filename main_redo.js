@@ -26,16 +26,6 @@ const ALL_LINKS = [
 
 let options = ALL_LINKS;
 
-// function filterOptions(type) {
-//     console.log("Options was " +options);
-//     //use filter to filter the options to only links that include the phrase in type
-//     //reassign that to options
-//     options = allLinks.filter(link => (type) = link.includes(type));
-//     console.log("Options now equals " +options);
-// }
-
-
-
 function changeOptions(type) {
     if (type == "reset") {
         changeOptionsReset();
