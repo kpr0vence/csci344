@@ -3,7 +3,7 @@
 
 body {
     margin: 0px;
-    /* background-color: aqua; */
+    background-color: #F2F3F5   ;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
@@ -16,8 +16,12 @@ h1, h2, h3, h4 {
     font-family: 'Comfortaa';
 }
 
-/* Nav Bar */
+p {
+    font-size: 17px;
+    line-height: 25px;
+}
 
+/* Nav Bar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -31,7 +35,7 @@ nav {
     left: 0;
     top: 0;
 
-    background-color: #f9f9f9;
+    background-color: #F2F3F5 ;
 }
 
 .navbar-leftside {
@@ -93,7 +97,7 @@ nav a {
     border-radius: 5px;
     box-shadow: 0px 0px 10px #cb9f7d;
 
-    background-color: #f9f9f9;
+    background-color: #F2F3F5 ;
 }
 
 .introduction {
@@ -153,7 +157,7 @@ nav a {
 
 .icon-wrapper {
     background-color: #652a57;
-    color: #f9f9f9;
+    color: #F2F3F5 ;
     padding: 10px;
     border-radius: 50%;
     font-size: small;
@@ -174,7 +178,7 @@ nav a {
 }
 
 .filter-button {
-    color: #f9f9f9;
+    color: #F2F3F5 ;
     background-color: #652a57;
     cursor: pointer;
     font-weight: bold;
@@ -184,7 +188,7 @@ nav a {
 }
 
 .filter-button:hover {
-    background-color: #f9f9f9;
+    background-color: #F2F3F5 ;
     color: #652a57;
     border: solid 2px #652a57;
     transition: all 0.4s ease;
@@ -198,14 +202,12 @@ nav a {
     justify-content: start;
     align-items: center;
     overflow: hidden;
-    background-color: #F2F0EF;
+    background-color: #F2F3F5 ;
 
 
     /* border-top: solid 4px white; */
 
 }
-
-
 
 .topic-header {
     width: 100vw;
@@ -216,6 +218,7 @@ nav a {
     border-width: 8px;
     border-image-source: linear-gradient(to right, #4d3589, #832d6f 45%, #a94865 100% ); */
     /* box-shadow: 0px -5px 3px -3px rgba(0, 0, 0, 0.552); */
+    /* background: linear-gradient(360deg, rgba(44,36,83,1) 0%, rgba(101,42,87,1) 45%, rgba(187,62,99,1) 100%); */
     box-shadow: 0px 0px 7px #cb9f7d;
 }
 
@@ -268,14 +271,31 @@ nav a {
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.552);
 }
 
+.most-recent h3 {
+    font-size: larger;
+}
+
+.most-recent a {
+    color: #4d2aa6;
+}
+
+.most-recent a:hover {
+    transition: 0s;
+    color: #7a4ee9;
+}
+
+.topic-content > .filter-button {
+    margin-right: 0px;
+}
+
 
 /* Currently not being used */
 .full-list {
-    color: #f9f9f9;
+    color: #F2F3F5 ;
     cursor: pointer;
     font-weight: bold;
     padding: 12px;
-    border: 3px white;
+    border: 3px #F2F3F5 ;
     /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.552); */
 
     background-color: #652a57;
@@ -285,25 +305,12 @@ nav a {
 }
 
 .full-list:hover {
-    background-color: #f9f9f9;
+    background-color: #F2F3F5 ;
     color: #652a57;
-    border: solid 4px #f9f9f9;
+    border: solid 4px #F2F3F5 ;
     transition: all 0.4s ease;
     /* background: linear-gradient(277deg, rgb(53, 41, 117) 0%, rgba(101,42,87,1) 10%, rgba(187,62,99,1) 100%); */
 }
-
-#lecture {  
-    /* Add onClick funciton that will show/hide contents */
-}
-
-/* .full-list-div {
-    display: flex;
-    flex-flow: row wrap;
-
-    gap: 20px; 
-    grid-column: 1 / 3;
-} */
-
 
 
 /* Theme switcher buttons */
@@ -381,6 +388,126 @@ nav a {
     <button class = "back-button">Go Back</button>
 </div> */
 
+.board {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    border: 20px double #dcbf84;
+    background: #c9ac7a;
+    border-radius: 5px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px ;
+    padding-bottom: 40px;
+
+    margin-bottom: 50px;
+ }
+
+ .board > h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+ }
+
+ .quotes {     
+    grid-column: span 2;
+    height: auto;
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    
+    
+}
+
+.sticky-note {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+
+    padding: 20px;
+    padding-top: 10px;
+    width: 18%;
+    height:max-content;
+
+  
+    background-color: #f9df82;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.sticky-note p {
+    font-size: large;
+}
+
+.sticky-note p > strong {
+    font-size: medium;
+    font-style: italic;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.background {
+    padding: 70px;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    background-image: url("computer.jpg"); /* The image used */
+    height: 500px; 
+    width: fit-content;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; 
+}
+
+.site {
+    width: 34em;
+    height: 25em;
+    background: transparent;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /* width: 40%; */
+    gap: 20px;
+    flex-wrap: row;
+    margin-bottom: 20px;
+}
+
+
+.web-browse {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+#site-section {
+    align-items: center;
+  justify-items: center;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.test {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.test iframe {
+    border-radius: 8px;
+}
 
 /**************/
 /* Dark Mode */
@@ -389,6 +516,8 @@ nav a {
 .dark-mode * {
     transition: all 0.4s ease
 }
+
+
 
 .dark-mode nav{
     background-color: rgb(20, 20, 20);
@@ -434,6 +563,14 @@ nav a {
     border: solid 2px rgba(255, 255, 255, 0.784);   
 }
 
+.dark-mode .topic-content > .filter-button:hover {
+    /* border-color: black; */
+    box-shadow: 0px 0px 7px #cb9f7d;
+
+    background-color: #a94865;
+    border-color: #a94865;
+}
+
 .dark-mode .icon-wrapper:hover {
     box-shadow: 0px 0px 7px  rgba(255, 255, 255, 0.784);   
 }
@@ -456,6 +593,11 @@ nav a {
 
 .dark-mode .topic-intro {
     border: none;
+    background: linear-gradient(310deg, rgb(24, 20, 44) 0%, rgba(101,42,87,1) 75%, rgb(145, 57, 83) 100%)
+}
+
+.dark-mode .test {
+    background-color: rgb(20, 20, 20);
 }
 
 .dark-mode .topic-header-text {
@@ -477,6 +619,10 @@ nav a {
 .dark-mode .topic a {
     color: #7357b9;
 }
+.dark-mode .most-recent a:hover {
+    transition: 0s;
+    color: #9068f3;
+}
 
 .dark-mode .flex-start-center {
     background: linear-gradient(88deg, rgb(24, 20, 44) 0%, rgba(101,42,87,1) 75%, rgb(145, 57, 83) 100%)
@@ -489,4 +635,21 @@ nav a {
 .dark-mode .topic-header {
     background-color:  rgb(20, 20, 20);
     color: whitesmoke;
+}
+
+.dark-mode .board {
+    
+    border: 20px double #cfaf6e;
+    background: #b58c40;
+
+}
+
+.dark-mode .sticky-note {
+    background-color: #e8c031;
+    color: black;
+}
+
+.dark-mode .background {
+        box-shadow: 0px 0px 10px 10px #cb9f7d;
+
 }
