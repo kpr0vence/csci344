@@ -210,7 +210,7 @@ nav a {
 }
 
 .topic-header {
-    width: 100vw;
+    width: -moz-available;
     /* background-color: #a94865; */
     padding-left: 60px;
     /* margin-top: 10px; */
@@ -388,10 +388,17 @@ nav a {
     <button class = "back-button">Go Back</button>
 </div> */
 
+#board-section {
+    padding-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 .board {
     grid-column: span 2;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
 
     border: 20px double #dcbf84;
     background: #c9ac7a;
@@ -405,10 +412,11 @@ nav a {
     margin-bottom: 50px;
  }
 
- .board > h2 {
+ .board  h2 {
     text-align: center;
     color: white;
     margin-bottom: 30px;
+    grid-column: span 4;
  }
 
  .quotes {     
@@ -429,7 +437,7 @@ nav a {
 
     padding: 20px;
     padding-top: 10px;
-    width: 18%;
+    width: auto;
     height:max-content;
 
   
@@ -473,9 +481,13 @@ iframe {
     background: transparent;
 }
 
+.navbar-links {
+    /* display: none; */
+}
+
 .buttons-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     /* width: 40%; */
     gap: 20px;
     flex-wrap: row;
@@ -498,7 +510,8 @@ iframe {
 }
 
 .test {
-    padding: 40px;
+    padding-bottom: 40px;
+    /* padding-top: 0px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -653,3 +666,104 @@ iframe {
         box-shadow: 0px 0px 10px 10px #cb9f7d;
 
 }
+
+@media screen and (max-width: 1000px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .container {
+        width: 80vw;
+    }
+    .topic {
+        width: 90vw;
+    }
+
+    .topic-header {
+        padding-left: 25px;
+    }
+
+    .buttons-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .board {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .board h2 {
+        grid-column: span 2;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    #intro-layout {
+        height: auto;
+    }
+    .container {
+        margin: 30px;
+    }
+
+
+    .topic {
+        grid-template-columns: 1fr;
+    }
+    .quotes {
+        flex-wrap: none;
+        justify-content: center;
+    }
+
+    #board-section {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .board {
+        grid-template-columns: 1fr;
+    }
+
+    .board h2 {
+        grid-column: 1;
+    }
+
+    .sticky-note {
+        width: auto;
+    }
+
+    .buttons-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+
+    }
+
+    #site-section {
+        display: none;
+    }
+
+    .site {
+        height: 23em;
+        margin: 20px;
+        /* width: 15em; */
+    }
+    .background {
+        margin: 30px;
+        background-color: rgb(20, 20, 20);
+    }
+}
+
+    @media screen and (max-width: 550px) {
+        #site-section {
+            display: none;
+        }
+        .site {
+            margin: 30px;
+            height: 23em;
+            width: 20em;
+        }
+
+        .background {
+            padding: 0px;
+        }
+    }
