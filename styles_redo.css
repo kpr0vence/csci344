@@ -481,9 +481,9 @@ iframe {
     background: transparent;
 }
 
-.navbar-links {
-    /* display: none; */
-}
+/* .navbar-links {
+    display: none;
+} */
 
 .buttons-wrapper {
     display: flex;
