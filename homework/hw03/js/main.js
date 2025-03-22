@@ -12,6 +12,7 @@ async function initializeScreen() {
     getPosts();
 }
 
+
 //Gets the token for this person thats logged in
 async function getToken() {
     return await getAccessToken(rootURL, username, password);   //the parameters are all global variables atm
@@ -46,14 +47,105 @@ async function getPosts() {
  //Use the global variable token for our access token
             //Quotations around the the object name are optional, and only necessary if you have dashes or spaces in the name
 
+window.createBookmark = async function createBookmark(postId) {
+    const postData = {
+        "post_id": postId,
+    };
+
+    const response = await fetch("https://photo-app-secured.herokuapp.com/api/bookmarks/", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(postData)
+    });
+
+    const data = await response.json();
+    console.log(data);
+}
+
+window.removeBookmark = async function removeBookmark(bookmarkId) {
+    const response = await fetch(`https://photo-app-secured.herokuapp.com/api/bookmarks/${bookmarkId}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    });
+
+    const data = await response.json();
+    console.log(data);
+}
+
+function renderBookmarkButton(postJSON) {
+    let snippet = ``;
+
+    if (postJSON.current_user_bookmark_id) {
+        snippet = `
+        <button  onClick = "window.removeBookmark(${postJSON.current_user_bookmark_id})">
+            <i class="fas fa-bookmark"></i>
+        </button>`;
+    } else {
+        snippet = `
+        <button  onClick = "window.createBookmark(${postJSON.id})">
+            <i class="far fa-bookmark"></i>
+        </button>`;
+    }    
+
+    return snippet;
+}
+
+window.createLike = async function createLike(postId) {
+    const postData = {
+        "post_id": postId,
+    };
+
+    const response = await fetch("https://photo-app-secured.herokuapp.com/api/likes/", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(postData)
+    });
+
+    const data = await response.json();
+    console.log(data);
+}
+
+window.removeLike = async function removeLike(likeId) {
+    const response = await fetch(`https://photo-app-secured.herokuapp.com/api/likes/${likeId}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    });
+
+    const data = await response.json();
+    console.log(data);
+}
+
+function getLikeButton(postJSON) {
+    let snippet = ``;
+    //if like id exists, fill in the heart
+    if(postJSON.current_user_like_id) {
+        snippet = `<button onClick = "window.removeLike(${postJSON.current_user_like_id})"><i class="fas fa-heart text-red-700"></i></button>`;
+    } else {
+        snippet = `<button onClick = "window.createLike(${postJSON.id})"><i class="far fa-heart"></i></button>`;
+    }
+    
+    return snippet;
+}
+
 function renderPosts(postListJSON) {
     postListJSON.forEach(renderPost)
 }
 
 function renderPost(postJSON) {
-    let commentsSection = `
-    `;
-
+    let commentsSection = renderCommentSection(postJSON.comments);
+    // console.log(commentsSection);
 
    let snippet = `
     <section class="bg-white border mb-10">
@@ -66,12 +158,12 @@ function renderPost(postJSON) {
         <div class="p-4">
             <div class="flex justify-between text-2xl mb-3">
                 <div>
-                    <button><i class="far fa-heart"></i></button>
+                    ${getLikeButton(postJSON)}
                     <button><i class="far fa-comment"></i></button>
                     <button><i class="far fa-paper-plane"></i></button>
                 </div>
                 <div>
-                    <button><i class="far fa-bookmark"></i></button>
+                    ${renderBookmarkButton(postJSON)}
                 </div>
             </div>
             <p class="font-bold mb-3">${postJSON.likes.length} likes</p>
@@ -81,15 +173,8 @@ function renderPost(postJSON) {
                     ${postJSON.caption} <button class="button">more</button>
                 </p>
             </div>
-            <p class="text-sm mb-3">
-                <strong>COMMENTUSERNAME</strong>
-                COMMENTBODY
-            </p>
-            <p class="text-sm mb-3">
-                <strong>{COMMENTUSERNAME}</strong>
-                {COMMENTBODY}
-            </p>
             <p class="uppercase text-gray-500 text-xs">${postJSON.display_time}</p>
+            ${commentsSection}
         </div>
         <div class="flex justify-between items-center p-3">
             <div class="flex items-center gap-3 min-w-[80%]">
@@ -102,6 +187,29 @@ function renderPost(postJSON) {
    `;
    let container = document.querySelector("main");
    container.insertAdjacentHTML("beforeend", snippet);
+}
+
+function renderCommentSection(comments) {
+    let builder = ``;
+    if (comments.length > 1) {
+        let lastComment = comments[comments.length - 1];
+        builder += ` <button class="text-blue-500 text-sm py-2">Show All ${comments.length} Comments</button>
+        <p class="text-sm mb-3">
+            <strong>${lastComment.user.username}</strong>
+            ${lastComment.text}
+        </p>
+        <p class="uppercase text-gray-500 text-xs">${lastComment.display_time}</p>
+        `;
+    } else if (comments.length === 1) {
+        let lastComment = comments[0];
+        builder += `<p class="text-sm mb-3">
+            <strong>${lastComment.user.username}</strong>
+            ${lastComment.text}
+        </p>
+        <p class="uppercase text-gray-500 text-xs">${lastComment.display_time}</p>`;
+    }
+
+    return builder;
 }
 
 // after all of the functions are defined, invoke initialize at the bottom:
