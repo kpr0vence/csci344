@@ -1,4 +1,6 @@
 import React from "react";
+import { Welcome } from "./Welcome";
+import "./App.css";
 //This is our first react component, react component file names should start with a capital letter
 
 
@@ -13,11 +15,14 @@ export default function App() {
             <header>
                 <h1>My First App</h1>
             </header>
+            <p>Hello React!</p>
+
             <main>
-                <p>Hello React!</p>
-                <p>Hello Mira :D</p>
-                <p>Hello Violet :D</p>
-                <p>Hello Alina :D</p>
+                <Welcome name="violet" imgUrl="https://picsum.photos/300?a=1" />
+                <Welcome name="mira" imgUrl="https://picsum.photos/300?a=2" />
+                <Welcome name="alina" imgUrl="https://picsum.photos/300?a=3" />
+                <Welcome name="kati" imgUrl="https://picsum.photos/300?a=4" />
+
             </main>
         </>
     );
