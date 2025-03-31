@@ -586,6 +586,10 @@ video {
   display: flex;
 }
 
+.contents{
+  display: contents;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -608,6 +612,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.border{
+  border-width: 1px;
 }
 
 .border-b{

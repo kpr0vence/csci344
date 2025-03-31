@@ -12,7 +12,7 @@ function changeBoxColor(color) {
     document.querySelector(".colorBox").style.backgroundColor = color;
 }
 
-
+//I have at least three, the carousel, the drawer, and the time picker (calendar)
 export default function App({bkColor="#1677ff"}) {
     const [backgroundColor, setBackgroundColor] = useState(bkColor);
     const contentStyle = {
@@ -29,14 +29,22 @@ export default function App({bkColor="#1677ff"}) {
             <NavBar />
             <main className="min-h-screen max-w-[1000px] mt-24 mx-auto">
                 <p>Put your design system components in the space below...</p>
-
-                
-                
-                
-                <ColorPicker defaultValue="#1677ff" onChange={c => setBackgroundColor(c.toHexString())} />
-
                 <MyDrawer buttonTitle="Open Side Panel :P"/>
-                
+                <ColorPicker defaultValue="#1677ff" onChange={c => setBackgroundColor(c.toHexString())} />
+                <Carousel arrows infinite={false}>
+                    <div>
+                        <h3 style={contentStyle}>Slide 1</h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>Slide 2</h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>Slide 3</h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>Slide 4</h3>
+                    </div>
+                </Carousel>
               
                 <h2 className="font-Comfortaa my-4 font-bold text-xl">
                     Photo Gallery
@@ -83,20 +91,6 @@ export default function App({bkColor="#1677ff"}) {
                         width={200}
                     />
                 </div>
-                <Carousel arrows infinite={false}>
-                    <div>
-                        <h3 style={contentStyle}>Slide 1</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>Slide 2</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>Slide 3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>Slide 4</h3>
-                    </div>
-                </Carousel>
 
                 <MyCalendar></MyCalendar>
                 
