@@ -15,5 +15,5 @@ const showSpotifyResults = (term, type, limit) => {
 
 // note that the albums might print before the tracks 
 // (b/c network request is less expensive):
-showSpotifyResults('NewDad', 'track', 10);
+showSpotifyResults('Drug Store Romeos', 'track', 10);
 // showSpotifyResults('Beyonce', 'album', 2);

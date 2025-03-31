@@ -1,5 +1,6 @@
 const showRestaurants = async (location, term, limit) => {
-    const rootURL = 'https://www.apitutor.org/yelp/simple/v3/businesses/search';
+    const rootURL = 'www.apitutor.org/yelp/simple/v3/businesses/search';
+    console.log(`${rootURL}?location=${location}&term=${term}&limit=${limit}`);
     const endpoint = `${rootURL}?location=${location}&term=${term}&limit=${limit}`;
     const response = await fetch(endpoint);
     const jsonData = await response.json();
