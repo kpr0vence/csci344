@@ -897,6 +897,14 @@ iframe {
         grid-column: span 1;
     }
 
+    .contact-me {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-me p {
+        margin: 0px;
+    }
 
 }
 
@@ -913,4 +921,6 @@ iframe {
         .background {
             padding: 0px;
         }
+
+        
     }
