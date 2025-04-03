@@ -851,6 +851,13 @@ iframe {
         margin: 30px;
         background-color: rgb(20, 20, 20);
     }
+
+    .expanded-list {
+        grid-template-columns: 1fr;
+        grid-column: span 1;
+    }
+
+
 }
 
     @media screen and (max-width: 550px) {
