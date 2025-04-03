@@ -243,7 +243,8 @@ nav a {
 }
 
 .topic-header {
-    width: -moz-available;
+    width: 100vw;
+     
     /* background-color: #a94865; */
     padding-left: 60px;
     /* margin-top: 10px; */
@@ -259,6 +260,10 @@ nav a {
     /* align-self: start; */
     font-size:x-large;
     color: black;
+}
+
+.attempt {
+    width: min-content;
 }
 
 .topic {
@@ -596,6 +601,8 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* width: 100vw; */
+    overflow: clip ;
 }
 
 .test iframe {
