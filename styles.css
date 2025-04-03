@@ -113,6 +113,27 @@ nav a {
     margin-top: 10px;
 }
 
+.intro-line {
+    font-size: larger;
+    font-style: normal;
+    margin-bottom: 20px;
+    ;
+}
+
+.contact-me {
+    align-self: flex-start;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    /* padding-left: 20px; */
+    width: 90%;
+    gap: 40px;
+}
+
+.contact-me em {
+    font-style: normal;
+}
+
 .suprise-me {
     display: flex;
     flex-flow: column;
@@ -643,6 +664,10 @@ iframe {
     color: rgba(255, 255, 255, 0.784);
 }
 
+.dark-mode .intro-line {
+    color: whitesmoke
+}
+
 .dark-mode h1, .dark-mode h2 {
     color: whitesmoke;
 }
@@ -730,6 +755,14 @@ iframe {
 
 .dark-mode .topic a {
     color: #7357b9;
+}
+
+.dark-mode .contact-me a {
+    color: #7357b9;
+}
+
+.dark-mode .contact-me em {
+    color: #7357b9;   
 }
 .dark-mode .most-recent a:hover {
     transition: 0s;
