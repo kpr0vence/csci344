@@ -1,7 +1,7 @@
 //Add links in chronological order?
 
 // CURRENTLY NOT BEING USED DO I HAVE TO LINK IT TO MY OTHER .JS FOR IT TO WORK?
-const assignments = [
+export const assignments = [
     { //Object for each type of assignment
         Type: "homework",
         Items: [

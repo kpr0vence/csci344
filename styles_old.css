@@ -1,0 +1,294 @@
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 100px;
+    
+}
+
+header {
+    background-color: #4D7298;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+}
+
+/* Sets up a 2 column grid to hold the tutorials | lectures */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-color: #2e435b;
+    gap: 30px;
+    margin: 30px;
+}
+
+#long {
+    grid-area: 1/2/3/3;
+}
+
+/* Div's inside Main's grid are flexboxes, that order their contents vertically (columns) */
+.topics {
+    background-color: white;
+    display: flex;
+    flex-flow: column-reverse;
+    height: fit-content;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border-color: #77A6B6;
+    border-style:none dashed dashed dashed;
+    /* border-style: none solid solid; */
+}
+
+.topics h2 {
+    background-color: #77A6B6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0%;
+    border-radius: 10px;
+    order: 10000;
+}
+
+/* Sets up a flexbox class for the link and description to go into */
+.card {
+    background-color: #fdfcf3;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
+}
+
+.card > a {
+    background-color: #9DC3C2;
+    color: #37506D;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card p {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.card:hover {
+    /* box-shadow: -5px -5px 0px 0px rgba(69, 52, 52, 0.205); */
+    box-shadow: 0px 0px 0px 0px;
+    /* border:  rgba(69, 52, 52, 0.205);
+    border-style: solid none none solid;
+    border-width: 5px; */
+}
+
+.card > a:hover {
+    background-color: #558B89;
+    color:white;
+}
+
+.topics:hover {
+    box-shadow: 5px 5px 0px 0px rgba(69, 52, 52, 0.205);
+}
+
+.reverse-case-text {
+    background-color: #9DC3C2;
+    color: #37506D;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+    /* Theres some weired spacing going on on the right side */
+}
+
+.card > div {
+    width: 90%;
+    align-content: center;
+}
+
+ ul {
+    width: 80%;
+    padding: 0px;
+    columns: 2;
+    list-style-position: inside;
+    list-style:decimal;
+    padding-left: 15px;
+ }
+
+ li {
+    margin-left: 0px;
+    margin-bottom: 10px;    
+    
+ }
+
+ li > a {
+    color: #2e435b;
+    padding: 3px;
+    margin: 5px;
+    line-height: 25px;
+ }
+
+ li > a:hover {
+    background-color: #558B89;
+    color: white;
+ }
+
+ .board {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    border: 20px double #dcbf84;
+    background: #c9ac7a;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+
+    
+ }
+
+ .board > h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+ }
+
+ .quotes {     
+    grid-column: span 2;
+    height: auto;
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    
+    
+}
+
+.sticky-note {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+
+    padding: 20px;
+    padding-top: 10px;
+    width: 18%;
+    height:max-content;
+
+  
+    background-color: #f9df82;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.words-of-quote {
+    font-size: large;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.background {
+    padding: 100px;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    background-image: url("computer.jpg"); /* The image used */
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 500px; 
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; 
+}
+
+.site {
+    width: 34em;
+    height: 25em;
+    background: transparent;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+.web-browse {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+
+ /* Smaller Windows */
+ @media screen and (max-width: 1000px) {
+    ul {
+        width: 80%;
+        columns: 1;
+        padding-left: 0px;
+    }
+   
+ }
+
+ @media screen and (max-width: 700px) {
+    main {
+        /* background-color: cadetblue; */
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 30px;
+
+        margin: 30px;
+    }
+
+    #long {
+        grid-area: auto;
+    }
+
+    .quotes {
+        flex-wrap: none;
+        justify-content: center;
+    }
+
+    .board {
+        grid-area: auto;
+    }
+
+    .sticky-note {
+        width: 100%;
+    }
+
+    .buttons-wrapper {
+        width: 80%;
+    }
+
+    .site {
+        height: 20em;
+        margin: 55px;
+        /* width: 15em; */
+    }
+    .background {
+        padding: 30px;
+    }
+
+    @media screen and (max-width: 550px) {
+        .site {
+            height: 17em;
+            margin-top: 80px;
+            width: 50em;
+        }
+
+        .background {
+            padding: 0px;
+        }
+    }
+ }
+
