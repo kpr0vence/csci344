@@ -1,0 +1,13 @@
+<header>
+    <h1>Welcome, {{ user.get('first_name') }} {{ user.get('last_name') }}</h1>
+    <nav>
+        <ul>
+            <li><a href="{{endpoint}}/?location={{location}}&term=pizza">Pizza</a></li>
+            <li><a href="{{endpoint}}/?location={{location}}&term=chinese">Chinese</a></li>
+            <li><a href="{{endpoint}}/?location={{location}}&term=thai">Thai</a></li>
+            <li><a href="{{endpoint}}/?location={{location}}&term=indian">Indian</a></li>
+            <li><a href="{{endpoint}}/?location={{location}}&term=Fast+Food">Fast Food</a></li>
+            <li><a href="{{endpoint}}/?location={{location}}&term=Bagel">Bagels</a></li>
+        </ul>
+    </nav>
+</header>

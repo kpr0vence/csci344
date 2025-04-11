@@ -1,4 +1,4 @@
-// Job: Component that does the layout and inkects all 
+// Job: Component that does the layout and injects all 
 //     of the other componentes as needed.
 
 import React from "react";

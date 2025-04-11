@@ -7,7 +7,7 @@ import App from "./components/App.jsx";
 
 async function main() {
     // this script kicks off the React App:
-    const username = "webdev";
+    const username = "kati";
     const token = await getAccessToken(username, "password");
     const rootEl = document.getElementById("app");
     const root = createRoot(rootEl);

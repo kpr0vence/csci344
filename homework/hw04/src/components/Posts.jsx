@@ -11,12 +11,6 @@ export default function Posts({ token }) {
     //      after the variable is set.
     const [posts, setPosts] = useState([]);
 
-    const [counter, setCounter] = useState(0);
-
-    function incrementCounter() {
-        setCounter(counter + 1);
-    }   //Also works
-
     async function getPosts() {
         const data = await getDataFromServer(token, "/api/posts");
         console.log(data);
@@ -32,8 +26,6 @@ export default function Posts({ token }) {
         {posts.map( (post) => ( //Making a map function, which miraculously draws each of the map created divs to the screen?
             <Post post={post} />
         ))}
-        <br />
-        <button onClick={incrementCounter}>Click Me! :3   count = {counter}</button>
     </div>;
     //changing a state variable is intelligent and only really redraws the elements that are related to the state that changed
 }
