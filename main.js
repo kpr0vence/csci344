@@ -193,6 +193,14 @@ const assignments = [
         ],
         Description: "This was completed independet of any lecture, but through one of the assigned readings. It walked me through how to lift a function our of a child react element so that it could affect two children elements on the same level of the React Tree."
     },
+    {
+        Title: "Tutorial 09",
+        Subtitle: "Intro to Flask",
+        Links:[
+
+        ],
+        Description: "This lecture focused on familiarizing ourselves with flask. To get the most out of this assignment, I did complete the extra credit task. Unfortunately, GitHub is not able to display the code that we did for this tutorial. The code is available to inspect on this sites GitHub repository."
+    }
 ]
 
 // *******************
@@ -310,8 +318,14 @@ function injectSnippet(group, type) {
     let mostRecent = group[group.length -1];
     console.log(mostRecent.Title);
 
+    let linkCode = ``;
+    if (mostRecent.Links.length === 0) 
+        linkCode = `${mostRecent.Title} | ${mostRecent.Subtitle}`;
+    else
+        linkCode = `<a href=${mostRecent.Links[0]}>${mostRecent.Title} | ${mostRecent.Subtitle}</a>`
+
     let snippet = 
-        `<h3 id = "${type}-most-recent">Most Recent: <a href=${mostRecent.Links[0]}>${mostRecent.Title} | ${mostRecent.Subtitle}</a></h3>
+        `<h3 id = "${type}-most-recent">Most Recent: ${linkCode}</h3>
                         <p>${mostRecent.Description}</p>`;
 
     let id = "#" + type;
@@ -376,19 +390,33 @@ function renderQuizAssignments() {
 }
 
 function renderAssignment(assignment) {
-    if (assignment.Links.length > 1)
+    if (assignment.Links.length === 0)
+        return renderNoLinkCase(assignment);
+    else if (assignment.Links.length > 1)
         return renderReverseCase(assignment);
     else
         return renderRegularCase(assignment);
 }
 
 function renderRegularCase(assignment) {
-    let snippet = ` <div class = "expanded-list-card hide">
-                            <a href="${assignment.Links[0]}"><strong>${assignment.Title}</strong>: ${assignment.Subtitle}</a>
-                        <p>
-                            ${assignment.Description}
-                        </p>
-                    </div>`;
+     let snippet = ` 
+        <div class = "expanded-list-card hide">
+                <a href="${assignment.Links[0]}"><strong>${assignment.Title}</strong>: ${assignment.Subtitle}</a>
+            <p>
+                ${assignment.Description}
+            </p>
+        </div>`;
+    return snippet;
+}
+
+function renderNoLinkCase(assignment) {
+    let snippet = `
+        <div class="expanded-list-card hide">
+            <a id="test"><strong>${assignment.Title}</strong>: ${assignment.Subtitle}</a>
+            <p>
+                ${assignment.Description}
+            </p>
+        </div>`;
     return snippet;
 }
 
