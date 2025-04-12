@@ -373,7 +373,7 @@ function renderCommentSection(postJSON) {
     </p>
     <p class="uppercase text-gray-500 text-xs">${postJSON.comments[commentNum - 1].display_time}</p>
     `;
-
+    
   }
 
   return template

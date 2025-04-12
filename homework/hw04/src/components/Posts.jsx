@@ -24,7 +24,7 @@ export default function Posts({ token }) {
     return <div>
         TODO: output all of the posts: {posts.length}
         {posts.map( (post) => ( //Making a map function, which miraculously draws each of the map created divs to the screen?
-            <Post post={post} />
+            <Post post={post} token={token} />
         ))}
     </div>;
     //changing a state variable is intelligent and only really redraws the elements that are related to the state that changed
