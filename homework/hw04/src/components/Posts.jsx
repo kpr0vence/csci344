@@ -22,7 +22,6 @@ export default function Posts({ token }) {
     }, []);
 
     return <div>
-        TODO: output all of the posts: {posts.length}
         {posts.map( (post) => ( //Making a map function, which miraculously draws each of the map created divs to the screen?
             <Post post={post} token={token} />
         ))}

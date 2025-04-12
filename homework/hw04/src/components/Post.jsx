@@ -46,11 +46,11 @@ export default function Post( {post, token} ) {
             className="w-full bg-cover" />
         <div className="p-4">
             <IconsBar post={post} token={token} requeryPost={requeryPost} />
-            <p className="font-bold mb-3">{likeCount}  likes DOES NOT UPDATE</p>
+            <p className="font-bold mb-3">{likeCount} likes</p>
             <div className="text-sm mb-3">
                 <p>
                     <strong>{post.user.username} </strong> 
-                    {post.caption}<button className="button">more</button>
+                    {post.caption} <button className="button" class="text-blue-700 text-sm py-2">more</button>
                 </p>
             </div>
             <CommentSection comments={comments}/>
