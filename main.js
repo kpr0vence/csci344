@@ -196,10 +196,18 @@ const assignments = [
     {
         Title: "Tutorial 09",
         Subtitle: "Intro to Flask",
-        Links:[
+        Links: [
 
         ],
         Description: "This lecture focused on familiarizing ourselves with flask. To get the most out of this assignment, I did complete the extra credit task. Unfortunately, GitHub is not able to display the code that we did for this tutorial. The code is available to inspect on this sites GitHub repository."
+    },
+    {
+        Title: "Homework 04",
+        Subtitle: "React Client (Photo App Pt. 3)",
+        Links: [
+            "homework/hw04/dist/index.html"
+        ],
+        Description: "Re-implement the HW03 code in React. This includes implementing like/unlike, bookmark/remove bookmark, and add comment functionality. The code had to be transpiled in order to be shown through this page. Additionally, I took care to ensure the page was accessable."
     }
 ]
 

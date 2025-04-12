@@ -17,7 +17,7 @@ export default function Profile({ token }) {
 
     return (
         <header className="flex gap-4 items-center">
-            <img src={profileInfo.thumb_url} alt={profileInfo.username + "'s"}profile picture class="rounded-full w-16" />
+            <img src={profileInfo.thumb_url} alt={profileInfo.username + "'s profile picture"}profile picture class="rounded-full w-16" />
             <h2 class="font-Comfortaa font-bold text-2xl">{profileInfo.username}</h2>
         </header>
     );

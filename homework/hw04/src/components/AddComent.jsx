@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useCallback} from "react";
 import { postDataToServer } from "../server-requests"
 
 
 export default function AddComment( {token, post_id, requeryPost, comments} ) {
-    async function addComment() {
+    async function addComment(e) {
+        e.preventDefault();
         const inputBox = document.querySelector("#post"+post_id).querySelector("input");
         const comment = inputBox.value;
 
@@ -18,8 +19,8 @@ export default function AddComment( {token, post_id, requeryPost, comments} ) {
         console.log(responseData);
         requeryPost();
 
-        inputBox.value = ""
-        inputBox.focus();
+        inputBox.value = "";
+        e.focus();
     }
 
     const thisPost = "post"+post_id
@@ -27,12 +28,14 @@ export default function AddComment( {token, post_id, requeryPost, comments} ) {
         <div id={thisPost}class="flex justify-between items-center p-3">
             <div class="flex items-center gap-3 min-w-[80%]">
                 <i class="far fa-smile text-lg"></i>
-                <input
+                <form class="w-[100%]" onSubmit={e => addComment(e)}>
+                    <input
                     aria-label="add a comment"
                     type="text"
-                    class="min-w-[80%] focus:outline-none"
+                    class="min-w-[100%] focus:outline-none"
                     placeholder="Add a comment..."
                 />
+                </form>                
             </div>
             <button aria-label="post comment" class="text-blue-700 py-2" onClick={addComment}>Post</button>
         </div>

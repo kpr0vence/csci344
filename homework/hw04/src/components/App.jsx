@@ -14,7 +14,7 @@ function logout() {
     alert("Nah bro, you can't log out. You're stuck here.");
 }
 
-//TODO:  Aria attributes, Form Accessability (can I just keep it the way it is now, or do I have to do it the way they hint says), Transpile
+//TODO: Transpile
 
 
 export default function App({ username, token }) {

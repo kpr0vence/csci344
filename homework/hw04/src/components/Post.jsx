@@ -35,6 +35,10 @@ export default function Post( {post, token} ) {
         setLikeCount(data.likes.length);
     }
 
+    let alt_text = post.alt_text;
+    if (alt_text === null) {
+        alt_text = post.user.first_name + " " + post.user.last_name + "'s post: " + post.caption.substr(0, 10)
+    }
 
     return (
     <section className="bg-white border mb-10">
@@ -42,7 +46,7 @@ export default function Post( {post, token} ) {
             <h3 className="text-lg font-Comfortaa font-bold">{post.user.username}</h3>
             <button className="icon-button"><i className="fas fa-ellipsis-h"></i></button>
         </div>
-        <img src={post.image_url} alt="placeholder image" width="300" height="300"
+        <img src={post.image_url} alt={alt_text} width="300" height="300"
             className="w-full bg-cover" />
         <div className="p-4">
             <IconsBar post={post} token={token} requeryPost={requeryPost} />
@@ -50,7 +54,7 @@ export default function Post( {post, token} ) {
             <div className="text-sm mb-3">
                 <p>
                     <strong>{post.user.username} </strong> 
-                    {post.caption} <button className="button" class="text-blue-700 text-sm py-2">more</button>
+                    {post.caption} <button aria-label="see more text button" className="button" class="text-blue-700 text-sm py-2">more</button>
                 </p>
             </div>
             <CommentSection comments={comments}/>
