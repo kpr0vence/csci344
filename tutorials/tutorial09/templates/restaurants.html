@@ -18,12 +18,12 @@
         <p>Search location: {{location}}</p>
         <p>Search term: {{search_term or 'None Specified'}}</p>
         <!-- <p>Data: {{ restaurants }}</p> -->
-
-        {% for restaurant in restaurants %}
-        <section>
-            TODO: Format Me: {{restaurant}}
-        </section>
-        {% endfor %}
+        <div class="container">
+            {% for restaurant in restaurants %}
+                {% include 'includes/restaurant-card.html' %}
+            {% endfor %}
+        </div>
+        
     </main>
 </body>
 

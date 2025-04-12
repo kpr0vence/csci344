@@ -19,14 +19,16 @@
         <p>Search term: {{search_term or 'None Specified'}}</p>
         
         <h2>Top Restaurant:</h2>
-        <div class="card">
-            <h3>{{ restaurant.get('name') }}</h3>
-            <img src="{{ restaurant.get('image_url') }}" alt="">
-            <p><strong>Price: {{ restaurant.get('price') }}</strong></p>
-            <p>Rating: {{ restaurant.get('rating') }} stars  Reviews: {{ restaurant.get('review_count') }}</p>
-            <p>Address: {{ restaurant.get('display_address') }} </p>
-    
+        <div class="restrict_size">
+            <div class="card">
+                <h3>{{ restaurant.get('name') }}</h3>
+                <img src="{{ restaurant.get('image_url') }}" alt="">
+                <p><strong>Price: {{ restaurant.get('price') }}</strong></p>
+                <p>Rating: {{ restaurant.get('rating') }} stars  Reviews: {{ restaurant.get('review_count') }}</p>
+                <p>Address: {{ restaurant.get('display_address') }} </p>
+            </div>
         </div>
+       
        
     </main>
 </body>
