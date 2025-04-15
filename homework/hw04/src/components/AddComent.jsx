@@ -17,27 +17,28 @@ export default function AddComment( {token, post_id, requeryPost, comments} ) {
         //send an http post request
         const responseData = await postDataToServer(token, "/api/comments/",sendData);
         console.log(responseData);
-        requeryPost();
 
-        inputBox.value = "";
-        e.focus();
+        if (responseData.id) {  //If post request was successful, it'll have an id. If it wasn't there will just be a message
+            requeryPost();
+            inputBox.value = "";
+        }
     }
 
     const thisPost = "post"+post_id
     return (
-        <div id={thisPost}class="flex justify-between items-center p-3">
-            <div class="flex items-center gap-3 min-w-[80%]">
-                <i class="far fa-smile text-lg"></i>
-                <form class="w-[100%]" onSubmit={e => addComment(e)}>
+        <div id={thisPost}className="flex justify-between items-center p-3">
+            <div className="flex items-center gap-3 min-w-[80%]">
+                <i className="far fa-smile text-lg"></i>
+                <form className="w-[100%]" onSubmit={e => addComment(e)}>
                     <input
                     aria-label="add a comment"
                     type="text"
-                    class="min-w-[100%] focus:outline-none"
+                    className="min-w-[100%] focus:outline-none"
                     placeholder="Add a comment..."
                 />
                 </form>                
             </div>
-            <button aria-label="post comment" class="text-blue-700 py-2" onClick={addComment}>Post</button>
+            <button aria-label="post comment" className="text-blue-700 py-2" onClick={addComment}>Post</button>
         </div>
     );
 }

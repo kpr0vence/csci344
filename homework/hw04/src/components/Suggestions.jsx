@@ -14,16 +14,18 @@ export default function Suggestions({ token }) {
     useEffect( () => {
         getSuggestions(); 
     }, [] );
-    console.log(suggestions);
 
     //Then we'll want to render eahc Suggestion component
     function renderSuggestion(suggestionObj) {
-        return <Suggestion suggestion={suggestionObj} />
+        return (
+            <div key={suggestionObj.id}>
+                <Suggestion suggestion={suggestionObj} />
+            </div> );
     }
 
     return (
         <div className="mt-4">
-            <p className="text-base text-gray-500 font-bold mb-4">
+            <p className="text-base text-gray-600 font-bold mb-4">
                 Suggestions for you
             </p>
             {

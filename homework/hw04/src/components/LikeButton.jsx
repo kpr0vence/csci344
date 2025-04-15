@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { postDataToServer, deleteDataFromServer, getAccessToken } from "../server-requests"
+import { postDataToServer, deleteDataFromServer} from "../server-requests"
 
 
-export default function Like( {like_id, post_id, token, requeryPost} ) {
+export default function LikeButton( {like_id, post_id, token, requeryPost} ) {
   // console.log("Like ID: " +like_id)
   const [likeID, setLikeID] = useState(like_id)
 
@@ -30,14 +30,14 @@ export default function Like( {like_id, post_id, token, requeryPost} ) {
 
   if (likeID) {
     return (
-      <button aria-label="remove like from post" onClick={deleteLike} >
-        <i class="text-red-600 fas fa-heart"></i>
+      <button aria-label="Like Button" aria-checked="true" role="switch" onClick={deleteLike} >
+        <i className="text-red-600 fas fa-heart"></i>
       </button>
   );
   } else {
     return (
-      <button aria-label="add like to post" onClick={createLike}>
-        <i class="far fa-heart"></i>
+      <button aria-label="Like Button" aria-checked="false" role="switch" onClick={createLike}>
+        <i className="far fa-heart"></i>
       </button>
     );
   }

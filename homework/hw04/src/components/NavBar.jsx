@@ -8,10 +8,13 @@ export default function NavBar({ username, logoutF }) {
             <h1 className="font-Comfortaa font-bold text-2xl">Photo App</h1>
             <ul className="flex gap-4 text-sm items-center justify-center">
                 <li>
+                    <button aria-label="API Docs Button" className="text-blue-700 py-2">API Docs</button>
+                </li>
+                <li>
                     <span>{username}👍</span>
                 </li>
                 <li>
-                    <button onClick={logoutF} className="text-blue-700 py-2">Sign out</button>
+                    <button aria-label="Sign Out Button" onClick={logoutF} className="text-blue-700 py-2">Sign out</button>
                 </li>
             </ul>
         </nav>

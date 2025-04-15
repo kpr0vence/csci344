@@ -1,8 +1,8 @@
 //Job: render bookmark (full/empty depending on if the user currently has it bookmarked) and provides funcitons to add/remvoe bookmark
 import React, { useState } from "react";
-import { postDataToServer, deleteDataFromServer, getAccessToken } from "../server-requests"
+import { postDataToServer, deleteDataFromServer} from "../server-requests"
 
-export default function Bookmark( {bookmark_id, post_id , token}) {
+export default function BookmarkButton( {bookmark_id, post_id , token}) {
   // console.log("Bookmark ID: " +bookmark_id)
   const [bookmarkID, setBookmarkID] = useState(bookmark_id)
 
@@ -27,13 +27,13 @@ export default function Bookmark( {bookmark_id, post_id , token}) {
 
   if (bookmarkID) {
     return (
-      <button aria-label="remove bookmark from post" onClick={deleteBookmark}>
-        <i class="fas fa-bookmark"></i>
+      <button aria-label="Bookmark Button" aria-checked="true" role="switch" onClick={deleteBookmark}>
+        <i className="fas fa-bookmark"></i>
       </button>
     )
   } else {
     return (
-        <button aria-label="add bookmark to post" onClick={createBookmark}><i class="far fa-bookmark"></i>
+        <button aria-label="Bookmark Button" aria-checked="false" role="switch" onClick={createBookmark}><i className="far fa-bookmark"></i>
         </button>
     )
   }

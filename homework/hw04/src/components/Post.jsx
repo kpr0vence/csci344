@@ -25,38 +25,39 @@ export default function Post( {post, token} ) {
     const [comments, setComments] = useState(post.comments);
     const [likeCount, setLikeCount] = useState(post.likes.length);
 
+    // Used to redraw so that likes and like count are synced, also used to redraw after a comment is added
     async function requeryPost() {
         console.log("Redrawing post")
         const data = await getDataFromServer(token, "/api/posts/"+post.id);
         console.log(data);
-        console.log(`Setting like count to ` +data.likes.length);
-        console.log("Setting comments to: " +data.comments)
         setComments(data.comments);
         setLikeCount(data.likes.length);
     }
 
     let alt_text = post.alt_text;
     if (alt_text === null) {
-        alt_text = post.user.first_name + " " + post.user.last_name + "'s post: " + post.caption.substr(0, 10)
+        alt_text = post.user.first_name + " " + post.user.last_name + "'s post photo: " + post.caption.substring(0,10)
     }
 
     return (
     <section className="bg-white border mb-10">
         <div className="p-4 flex justify-between">
             <h3 className="text-lg font-Comfortaa font-bold">{post.user.username}</h3>
-            <button className="icon-button"><i className="fas fa-ellipsis-h"></i></button>
+            <button className="icon-button" aria-label="more actions button"><i className="fas fa-ellipsis-h"></i></button>
         </div>
         <img src={post.image_url} alt={alt_text} width="300" height="300"
             className="w-full bg-cover" />
-        <div className="p-4">
+        <div className="p-4 border">
             <IconsBar post={post} token={token} requeryPost={requeryPost} />
             <p className="font-bold mb-3">{likeCount} likes</p>
-            <div className="text-sm mb-3">
+            <div className="text-sm mb-3 flex gap-2">
                 <p>
                     <strong>{post.user.username} </strong> 
-                    {post.caption} <button aria-label="see more text button" className="button" class="text-blue-700 text-sm py-2">more</button>
+                    {post.caption} <button aria-label="see more text button" className="button text-blue-700 text-sm py-0">more</button>
                 </p>
             </div>
+            <p className="uppercase text-gray-500 text-xs">{post.display_time}</p>
+
             <CommentSection comments={comments}/>
         </div>
         <AddComment comments={comments} requeryPost={requeryPost} token={token} post_id={post.id}/>
