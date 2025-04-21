@@ -40,15 +40,23 @@ SELECT posts.id, posts.image_url, posts.user_id, users.username, users.first_nam
 
 
 -- Exercise 9: More joining practice: two tables
--- NOT QUITE CORRECT!!! Its giving the wrong results (not the same as the expected output)
-SELECT posts.id, posts.pub_date, following.id FROM posts INNER JOIN following ON posts.user_id=following.following_id WHERE (posts.user_id=26);
+SELECT posts.id, posts.pub_date, posts.user_id
+from posts
+INNER JOIN following
+ON (posts.user_id=following.following_id)
+WHERE (following.user_id=26)
 
 
 
 -- Exercise 10: More joining practice: three tables (Optional)
--- NOT QUITE CORRECT!!!
-SELECT posts.id, posts.pub_date, following.id, users.username FROM posts INNER JOIN following ON posts.user_id=following.following_id INNER JOIN users ON following.id=users.id ORDER BY pub_date desc;
--- Doesn't have the filtering for just posts by people that id=26 follows
+SELECT posts.id, posts.pub_date, following.following_id, users.username
+from posts
+INNER JOIN following
+ON (posts.user_id=following.following_id)
+INNER JOIN users
+ON (posts.user_id=users.id)
+WHERE (following.user_id=26)
+ORDER BY posts.pub_date desc
 
 
 
@@ -72,4 +80,5 @@ UPDATE users SET email = 'knick2022@gmail.com' WHERE (id=26);
 
 
 -- Exercise 14: More Querying Practice (Optional)
-SELECT posts.id, posts.user_id, count(*), CONCAT(SUBSTRING(posts.caption, 0, 50),'...') FROM comments INNER JOIN posts ON (posts.id=comments.post_id) WHERE (posts.user_id=26) GROUP BY posts.id, posts.user_id, posts.caption ORDER BY count(*) desc;
+SELECT posts.id, posts.user_id, count(*), CONCAT(SUBSTRING(posts.caption, 0, 53),'...') as caption FROM comments INNER JOIN posts ON (posts.id=comments.post_id) WHERE (posts.user_id=26) GROUP BY posts.id, posts.user_id, posts.caption ORDER BY count(*) desc;
+
