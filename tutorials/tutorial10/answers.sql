@@ -15,12 +15,12 @@ SELECT id, first_name, last_name FROM users ORDER BY last_name;
 
 
 -- Exercise 4: Filtering
-SELECT id, user_id, image_url FROM posts WHERE (user_id=26);
+SELECT id, image_url, user_id FROM posts WHERE (user_id=26);
 
 
 
 -- Exercise 5: Filtering with logical operators
-SELECT id, user_id, image_url FROM posts WHERE (user_id=26 OR user_id=12);
+SELECT id, image_url, user_id FROM posts WHERE (user_id=26 OR user_id=12);
 
 
 
@@ -56,7 +56,7 @@ ON (posts.user_id=following.following_id)
 INNER JOIN users
 ON (posts.user_id=users.id)
 WHERE (following.user_id=26)
-ORDER BY posts.pub_date desc
+ORDER BY posts.pub_date desc;
 
 
 

@@ -199,7 +199,7 @@ const assignments = [
         Links: [
 
         ],
-        Description: "This lecture focused on familiarizing ourselves with flask. To get the most out of this assignment, I did complete the extra credit task. Unfortunately, GitHub is not able to display the code that we did for this tutorial. The code is available to inspect on this sites GitHub repository."
+        Description: "This tutorial focused on familiarizing ourselves with flask. To get the most out of this assignment, I did complete the extra credit task. Unfortunately, GitHub is not able to display the code that we did for this tutorial. The code is available to inspect on this sites GitHub repository."
     },
     {
         Title: "Homework 04",
@@ -208,7 +208,15 @@ const assignments = [
             "homework/hw04/dist/index.html"
         ],
         Description: "Re-implement the HW03 code in React. This includes implementing like/unlike, bookmark/remove bookmark, and add comment functionality. The code had to be transpiled in order to be shown through this page. Additionally, I took care to ensure the page was accessable."
-    }
+    },
+    {
+        Title: "Tutorial 10",
+        Subtitle: "Database / ORM Activity ",
+        Links: [
+
+        ],
+        Description: "Practice creating SQL queries. This involved Joining tables, filtering, and ordering the returned content. For example, one prompt was to \"Write a query that displays the id and caption of every blog post that a specific user has published, along with a count of how many comments each post has.\""
+    },
 ]
 
 // *******************
