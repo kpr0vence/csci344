@@ -36,7 +36,7 @@ class PostListEndpoint(Resource):
         except:
             return Response(
                 json.dumps({
-                    "message": "The limit must be an integer berween 1 and 50"
+                    "message": "The limit must be an integer between 1 and 50"
                 }),
                 mimetype="application/json", 
                 status=400)

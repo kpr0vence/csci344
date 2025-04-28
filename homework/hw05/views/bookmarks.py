@@ -6,6 +6,7 @@ from flask_restful import Resource
 from models import db
 from models.bookmark import Bookmark
 from models.post import Post
+from views import can_view_post
 
 
 
@@ -24,17 +25,83 @@ class BookmarksListEndpoint(Resource):
         data = [item.to_dict() for item in bookmarks.all()]
         return Response(json.dumps(data), mimetype="application/json", status=200)
     
-# POST IS VERY BAD
     def post(self):
         # TODO: Add POST Logic...
+        # Sends in a post id
+        # post_id
+        # Check the post we want to bookmark exists
+        
+        # Get the post id, and verify it's good input
+        data = request.json
+        post_id =  data.get("post_id")    #Gets the post id from the http request
+        print(f"POST ID={post_id}")
+        
+        # Check for no id  given, 404
+        if (post_id is None):
+            return Response(
+                json.dumps({
+                    "message": "A post id is reqired to add a bookmark for that post."
+                }),
+                mimetype="application/json", 
+                status=400)
+        
+        # Check for bad input (a string)
+        try:
+            post_id = int(post_id)
+        except:
+            return Response(
+                json.dumps({
+                    "message": "The post id must be an integer."
+                }),
+                mimetype="application/json", 
+                status=400)
+
+        # Check if post exists
+        post = Post.query.get(post_id)
+
+        if post is None:
+            return Response(
+                json.dumps({
+                    "message": f"Post id={post_id} not found"
+                }),
+                mimetype="application/json", 
+                status=404)
+
+
+        # Check if they can view that post
+        can_view = can_view_post(post_id, self.current_user)
+
+        if not can_view:
+            return Response(
+                json.dumps({
+                    "message": f"Post id={post_id} not found"
+                }),
+                mimetype="application/json", 
+                status=404)
+        
+        # Check if already bookmarked
+        bookmarks = (Bookmark
+                 .query.filter(Bookmark.user_id.__eq__(self.current_user.id)))  # Gets all bookmarks for current user
+        # I want to see if a bookmark with the same post_id is already here
+        # I'm not crazy about this solution but it does seem to work...
+        for bookmark in bookmarks:
+            if (bookmark.post_id == post_id):
+                return Response(
+                json.dumps({
+                    "message": f"Post id={post_id} has already been bookmarked."
+                }),
+                mimetype="application/json", 
+                status=400)
         
 
+        # If it passes all of this, we can make the new bookmark
+
+        new_bookmark = Bookmark(self.current_user.id, post_id)
+        db.session.add(new_bookmark)    #issues the insert statement
+        db.session.commit()  #Comits the change to the database
 
         return Response(
-            json.dumps(),
-            mimetype="application/json",
-            status=201,
-        )
+            json.dumps(new_bookmark.to_dict()), mimetype="application/json", status=201)
 
 
 class BookmarkDetailEndpoint(Resource):
