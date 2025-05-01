@@ -211,11 +211,19 @@ const assignments = [
     },
     {
         Title: "Tutorial 10",
-        Subtitle: "Database / ORM Activity ",
+        Subtitle: "Database / ORM Activity",
         Links: [
 
         ],
         Description: "Practice creating SQL queries. This involved Joining tables, filtering, and ordering the returned content. For example, one prompt was to \"Write a query that displays the id and caption of every blog post that a specific user has published, along with a count of how many comments each post has.\""
+    },
+    {
+        Title: "Homework 05",
+        Subtitle: "Build a Rest API",
+        Links: [
+
+        ],
+        Description: "Created a REST API using Flask and PostgreSQL. We did this by creating and populating a local database, then configuring python code to interact with the database using SQL Alchemy and use Flask RESTful to implement a few API endpoints. Finally, we ran multiple tests to see that the API requirements have been met."
     },
 ]
 
