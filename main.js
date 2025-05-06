@@ -225,6 +225,14 @@ const assignments = [
         ],
         Description: "Created a REST API using Flask and PostgreSQL. We did this by creating and populating a local database, then configuring python code to interact with the database using SQL Alchemy and use Flask RESTful to implement a few API endpoints. Finally, we ran multiple tests to see that the API requirements have been met."
     },
+    {
+        Title: "Homework 06",
+        Subtitle: "Secure Photo App",
+        Links: [
+
+        ],
+        Description: "Used cookies to secure the Photo App from previous homeworks. Locked down endpoints and ran a host of security tests to ensure the product was sufficiently safe."
+    },
 ]
 
 // *******************
