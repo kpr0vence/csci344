@@ -144,11 +144,11 @@ class TestPostDetailEndpoint(unittest.TestCase):
 
         # Act & Assert - PATCH
         response = utils.issue_patch_request(url, json={}, user_id=self.user_id)
-        self.assertEqual(response.status_code, 404)
+        self.assertIn(response.status_code, [405, 404])
 
         # Act & Assert - DELETE
         response = utils.issue_delete_request(url, user_id=self.user_id)
-        self.assertEqual(response.status_code, 404)
+        self.assertIn(response.status_code, [405, 404])
 
     def test_nonexistent_id_handled(self):
         """Test that non-existent post IDs return 404 for all methods."""

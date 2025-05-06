@@ -1,4 +1,6 @@
 from dotenv import load_dotenv
+import mimetypes
+mimetypes.add_type('application/javascript', '.js')
 
 load_dotenv()
 import os
@@ -59,6 +61,8 @@ initialize_routes(api, flask_jwt_extended.current_user)
 # Route for serving static react files
 @app.route("/<path:filename>")
 def custom_static(filename):
+    import mimetypes
+    print(mimetypes.guess_type(filename), filename)
     try:
         return send_from_directory(app.root_path + "/static/react-client/dist", filename)
     except FileNotFoundError:

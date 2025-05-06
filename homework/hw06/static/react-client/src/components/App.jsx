@@ -17,11 +17,23 @@ function logout() {
 //TODO: Transpile
 
 
+
+
 export default function App({ username, token }) {
+    const [profileInfo, setProfileInfo] = useState({});
+    async function getUserInfo( ) {
+            let userInfo = await getDataFromServer(token, "/api/profile/");
+            setProfileInfo(userInfo);
+    }
+
+    useEffect( () => {
+            getUserInfo(); 
+        }, [] );
+    
     return (
         <>
             {/* Navbar (already implemented for you ) */}
-            <NavBar username={username} logoutF={logout}/>
+            <NavBar username={profileInfo.username} logoutF={logout}/>
 
             {/* Right Panel */}
             <aside className="fixed top-[100px] left-[63vw] w-70 hidden md:block max-w-[300px]">
